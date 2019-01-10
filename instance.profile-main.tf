@@ -25,5 +25,5 @@ resource aws_iam_policy_attachment collection
 resource aws_iam_instance_profile s3_access_profile
 {
     name  = "s3-profile-${ var.in_ecosystem_name }-${ var.in_tag_timestamp }"
-    role  = "${ aws_iam_role.iam_s3_access_role.name }"
+    roles = [ "${ aws_iam_role.iam_s3_access_role.name }" ]
 }
