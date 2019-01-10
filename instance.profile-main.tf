@@ -3,7 +3,7 @@
 resource aws_iam_role iam_s3_access_role
 {
     name               = "iam-s3-access-role"
-    assume_role_policy = "${ file( "instance.profile-role.json" ) }"
+    assume_role_policy = "${ file( "${path.module}/instance.profile-role.json" ) }"
 }
 
 
@@ -11,7 +11,7 @@ resource aws_iam_policy s3_access_policy
 {
     name        = "iam-s3-access-policy"
     description = "Base policy for access to s3 buckets."
-    policy      = "${ file( "instance.profile-s3policy.json" ) }"
+    policy      = "${ file( "${path.module}/instance.profile-s3policy.json" ) }"
 }
 
 
